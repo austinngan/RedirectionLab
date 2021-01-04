@@ -41,4 +41,21 @@ public class PigLatin {
       return pigLatin(s);
     }
   }
+  public static void main(String[]args){
+    Scanner n=new Scanner (System.in);
+    while (n.hasNextLine()){
+      String temp=n.nextLine();
+      Scanner lineScan=new Scanner(temp);
+      String tempWord="";
+      String output="";
+      while (lineScan.hasNext()){
+        tempWord=lineScan.next();
+        output+=pigLatinBest(tempWord);
+        if (lineScan.hasNext()){
+          output=output+" ";
+        }
+      }
+      System.out.println(output);
+    }
+  }
 }
