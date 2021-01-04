@@ -28,4 +28,17 @@ public class PigLatin {
     }
     return (s.substring(1)+firstChar+"hay");
   }
+  public static String pigLatinBest(String s){
+    s=s.toLowerCase();
+    if (!Character.isDigit(s.charAt(0))&&!Character.isLetter(s.charAt(0))){
+      return s;
+    }
+    if (!Character.isDigit(s.charAt(s.length()-1))&&!Character.isLetter(s.charAt(s.length()-1))){
+      String noSymbol=s.substring(0,s.length()-1);
+      return (pigLatin(noSymbol))+(s.charAt(s.length()-1));
+    }
+    else{
+      return pigLatin(s);
+    }
+  }
 }
